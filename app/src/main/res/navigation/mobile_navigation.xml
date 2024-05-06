@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.factoryscanner.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_purchase"
+            app:destination="@id/nav_purchase" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_list"
+            app:destination="@id/nav_list" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_inventory"
+            app:destination="@id/nav_inventory" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_location"
+            app:destination="@id/nav_location" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_issuing"
+            app:destination="@id/nav_issuing" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_inventory"
+        android:name="com.example.factoryscanner.ui.inventory.InventoryFragment"
+        android:label="@string/menu_inventory"
+        tools:layout="@layout/fragment_inventory" >
+        <action
+            android:id="@+id/action_nav_inventory_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_purchase"
+        android:name="com.example.factoryscanner.ui.purchase.PurchaseFragment"
+        android:label="@string/menu_purchase"
+        tools:layout="@layout/fragment_purchase" >
+        <action
+            android:id="@+id/action_nav_purchase_to_purchaseItemFragment"
+            app:destination="@id/purchaseItemFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.example.factoryscanner.ui.picklist.PickListFragment"
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_picklist" >
+        <action
+            android:id="@+id/action_nav_list_to_pickListConfirmFragment"
+            app:destination="@id/pickListConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseItemFragment"
+        android:name="com.example.factoryscanner.ui.purchase.PurchaseItemFragment"
+        android:label="Bevételezés"
+        tools:layout="@layout/fragment_purchase_item" >
+        <action
+            android:id="@+id/action_purchaseItemFragment_to_purchaseItemDetailsFragment"
+            app:destination="@id/purchaseItemDetailsFragment" />
+        <action
+            android:id="@+id/action_purchaseItemFragment_to_nav_purchase"
+            app:destination="@id/nav_purchase" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/purchaseItemDetailsFragment"
+        android:name="com.example.factoryscanner.ui.purchase.PurchaseItemDetailsFragment"
+        android:label="Bevételezés részletek"
+        tools:layout="@layout/fragment_purchase_item_details" >
+        <action
+            android:id="@+id/action_purchaseItemDetailsFragment_to_purchaseItemFragment"
+            app:destination="@id/purchaseItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickListConfirmFragment"
+        android:name="com.example.factoryscanner.ui.picklist.PickListConfirmFragment"
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_picklist_confirm">
+        <action
+            android:id="@+id/action_pickListConfirmFragment_to_nav_list"
+            app:destination="@id/nav_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_location"
+        android:name="com.example.factoryscanner.ui.location.LocationFragment"
+        android:label="@string/menu_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_nav_location_to_location_details_fragment"
+            app:destination="@id/location_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/location_details_fragment"
+        android:name="com.example.factoryscanner.ui.location.LocationDetailsFragment"
+        tools:layout="@layout/fragment_location_details" >
+        <action
+            android:id="@+id/action_location_details_fragment_to_nav_location"
+            app:destination="@id/nav_location" />
+        <action
+            android:id="@+id/action_location_details_fragment_to_location_batch_details_fragment"
+            app:destination="@id/location_batch_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/location_batch_details_fragment"
+        android:name="com.example.factoryscanner.ui.location.LocationBatchDetailsFragment"
+        tools:layout="@layout/fragment_location_batch_details" >
+        <action
+            android:id="@+id/action_location_batch_details_fragment_to_location_details_fragment"
+            app:destination="@id/location_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_issuing"
+        android:name="com.example.factoryscanner.ui.issuing.IssuingFragment"
+        android:label="@string/menu_issuing"
+        tools:layout="@layout/fragment_issuing" >
+        <action
+            android:id="@+id/action_nav_issuing_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_issuing_to_quantity_pick_fragment"
+            app:destination="@id/quantity_pick_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quantity_pick_fragment"
+        android:name="com.example.factoryscanner.ui.issuing.QuantityPickFragment"
+        tools:layout="@layout/fragment_quantity_pick" >
+        <action
+            android:id="@+id/action_quantity_pick_fragment_to_nav_issuing"
+            app:destination="@id/nav_issuing" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,66 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="pref_ip"
+            app:title="SQL szerver IP címe"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            app:key="pref_port"
+            app:title="SQL szerver port"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            app:key="pref_db"
+            app:title="FactoryMaster adatbázis"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            app:key="pref_user"
+            app:title="Felhasználónév"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            android:key="pref_password"
+            android:title="Jelszó"
+            android:dialogTitle="Jelszó"
+            app:useSimpleSummaryProvider="false"
+            app:summary="Kattintson ide a jelszó megadáshoz"
+            android:inputType="numberPassword"/>
+        <Preference
+            android:key="scanLogin"
+            android:title="Beszkennelem az adatatokat"
+            android:persistent="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/label_print">
+
+        <SwitchPreferenceCompat
+            app:key="label_print_purchase"
+            app:title="@string/label_print_purchase_title" />
+
+        <SwitchPreferenceCompat
+            app:key="label_print_inventory"
+            app:title="@string/label_print_inventory_title" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/label_logout">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            app:key="pref_logout"
+            app:title="@string/logout_delete_data" />
+
+    </PreferenceCategory>
+    <PreferenceScreen
+        android:title="Verzió"
+        android:key="version"
+        android:summary="4.0">
+    </PreferenceScreen>
+
+</PreferenceScreen>
